@@ -1,0 +1,17 @@
+{
+  "name": "anytts",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.87.0",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  }
+}

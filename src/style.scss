@@ -1,0 +1,27 @@
+@import "bootstrap/scss/_functions";
+
+@import "bootstrap/scss/_variables";
+@import "bootstrap/scss/_variables-dark";
+
+@import "bootstrap/scss/_maps";
+@import "bootstrap/scss/_mixins";
+@import "bootstrap/scss/_root";
+
+@import "bootstrap/scss/_utilities";
+@import "bootstrap/scss/_reboot";
+@import "bootstrap/scss/utilities/_api";
+@import "bootstrap/scss/_buttons";
+@import "bootstrap/scss/_forms";
+@import "bootstrap/scss/_alert";
+@import "bootstrap/scss/_spinners";
+
+svg {
+    width: 1em;
+    height: 1em;
+    fill: var(--bs-body-color);
+}
+
+.btn, .alert {
+    display: inline-flex;
+    align-items: center;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure TTS Options</title>
+</head>
+
+<body>
+  <div class="mx-auto mt-3" style="width: 400px;">
+    <h2>Azure TTS Options</h2>
+
+    <div id="status-message" class="mt-3 alert alert-info d-none">
+      <svg class="me-1">
+        <use href="#fa-triangle-exclamation"></use>
+      </svg>
+      <span id="status-text">&nbsp;</span>
+    </div>
+
+    <form id="options-form">
+      <div class="mb-3">
+        <label for="azure-key" class="form-label">API Key:</label>
+        <input type="password" id="azure-key" name="azureKey" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="azure-region" class="form-label">Region:</label>
+        <select class="form-select" id="azure-region" name="azureRegion" required>
+          <option selected></option>
+          <option value="australiaeast">australiaeast</option>
+          <option value="brazilsouth">brazilsouth</option>
+          <option value="canadacentral">canadacentral</option>
+          <option value="centralindia">centralindia</option>
+          <option value="centralus">centralus</option>
+          <option value="eastasia">eastasia</option>
+          <option value="eastus">eastus</option>
+          <option value="eastus2">eastus2</option>
+          <option value="francecentral">francecentral</option>
+          <option value="germanywestcentral">germanywestcentral</option>
+          <option value="japaneast">japaneast</option>
+          <option value="japanwest">japanwest</option>
+          <option value="koreacentral">koreacentral</option>
+          <option value="northcentralus">northcentralus</option>
+          <option value="northeurope">northeurope</option>
+          <option value="norwayeast">norwayeast</option>
+          <option value="qatarcentral">qatarcentral</option>
+          <option value="southafricanorth">southafricanorth</option>
+          <option value="southcentralus">southcentralus</option>
+          <option value="southeastasia">southeastasia</option>
+          <option value="swedencentral">swedencentral</option>
+          <option value="switzerlandnorth">switzerlandnorth</option>
+          <option value="switzerlandwest">switzerlandwest</option>
+          <option value="uaenorth">uaenorth</option>
+          <option value="uksouth">uksouth</option>
+          <option value="westcentralus">westcentralus</option>
+          <option value="westeurope">westeurope</option>
+          <option value="westus">westus</option>
+          <option value="westus2">westus2</option>
+          <option value="westus3">westus3</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="azure-voice" class="form-label">
+          Voice: <div id="spinner" class="spinner-grow spinner-grow-sm d-none"></div>
+        </label>
+        <div class="input-group">
+          <select class="form-select" id="azure-voice" name="azureVoice" required disabled>
+            <option selected></option>
+            <optgroup label="Multilingual" id="multilingual"></optgroup>
+            <optgroup label="Locale" id="locale"></optgroup>
+          </select>
+          <button class="btn btn-outline-secondary" id="update-voices" disabled>
+            <svg class="me-1">
+              <use href="#fa-rotate-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div>
+        <button type="submit" id="save-button" class="btn btn-primary">
+          <svg class="me-1">
+            <use href="#fa-floppy-disk"></use>
+          </svg>
+          Save
+        </button>
+        <button type="button" id="clear-button" class="btn btn-danger ms-1">
+          <svg class="me-1">
+            <use href="#fa-trash"></use>
+          </svg>
+          Clear
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="src/options.js"></script>
+
+  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="fa-triangle-exclamation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
+    </symbol>
+    <symbol id="fa-circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+    </symbol>
+    <symbol id="fa-rotate-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z" />
+    </symbol>
+    <symbol id="fa-floppy-disk" xmlns="http://www.w3.org/2000/svg" class="me-1" viewBox="0 0 448 512">
+      <path
+        d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-242.7c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32L64 32zm0 96c0-17.7 14.3-32 32-32l192 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32L96 224c-17.7 0-32-14.3-32-32l0-64zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+    </symbol>
+    <symbol id="fa-trash" xmlns="http://www.w3.org/2000/svg" class="me-1" viewBox="0 0 448 512">
+      <path
+        d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
+    </symbol>
+  </svg>
+</body>
+
+</html>
