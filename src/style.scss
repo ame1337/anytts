@@ -21,6 +21,10 @@ svg {
     fill: var(--bs-body-color);
 }
 
+body > svg {
+    display: none;
+}
+
 .btn, .alert {
     display: inline-flex;
     align-items: center;
